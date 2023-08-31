@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\adi.ch.dev.poa.api.props" />
+</Project>

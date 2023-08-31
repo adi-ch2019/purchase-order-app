@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\adi.ch.dev.poa.api.props" />
+</Project>

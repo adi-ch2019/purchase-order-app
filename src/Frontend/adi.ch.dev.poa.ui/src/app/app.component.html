@@ -1,0 +1,35 @@
+<div class='card'>
+  <div class='card-header'>
+    {{pageTitle}}
+  </div>
+  <!-- <div class='card-body'>
+    <div class='table-responsive'>
+      <table class='table'
+             *ngIf='orders.length'>
+        <thead>
+          <tr>            
+            <th>OrderDate</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr >
+            <td>             
+                {{ orders.OrderDate }}
+            </td>
+            <td>{{ orders.Quantity }}</td>
+            <td>{{ orders.Price }}</td>
+            <td>{{ orders.Details }}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div> -->
+</div>
+<div *ngIf='errorMessage'
+     class='alert alert-danger'>
+  Error: {{ errorMessage }}
+</div>
