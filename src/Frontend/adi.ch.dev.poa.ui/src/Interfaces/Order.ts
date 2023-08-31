@@ -1,7 +1,7 @@
 export interface IOrder {
-    OrderDate: Date;
-    Quantity: number;
-    Price: number;
+    OrderDate: string;
+    Quantity: string;
+    Price: string;
     Details?: string;
   }
   

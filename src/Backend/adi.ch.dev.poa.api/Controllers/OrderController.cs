@@ -17,8 +17,8 @@ public class OrderController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<OrderModel> Get()
+    [HttpGet(Name = "OrdersGet")]
+    public IActionResult Get()
     {
        IList<OrderModel> Orders =new List<OrderModel>();
         for (int i=0;i<5;i++)
@@ -31,7 +31,7 @@ public class OrderController : ControllerBase
             Orders.Add(om);
         }
 
-        return Orders.ToArray();
+        return Ok(Orders);
 
     }
 }

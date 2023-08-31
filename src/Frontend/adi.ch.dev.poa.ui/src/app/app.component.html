@@ -2,10 +2,9 @@
   <div class='card-header'>
     {{pageTitle}}
   </div>
-  <!-- <div class='card-body'>
+  <div class='card-body'>
     <div class='table-responsive'>
-      <table class='table'
-             *ngIf='orders.length'>
+      <table class='table'>
         <thead>
           <tr>            
             <th>OrderDate</th>
@@ -15,19 +14,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr >
+          <tr *ngFor="let order of orders">
             <td>             
-                {{ orders.OrderDate }}
+                {{ order.OrderDate }}
             </td>
-            <td>{{ orders.Quantity }}</td>
-            <td>{{ orders.Price }}</td>
-            <td>{{ orders.Details }}</td>
+            <td>{{ order.Quantity }}</td>
+            <td>{{ order.Price }}</td>
+            <td>{{ order.Details }}</td>
             
           </tr>
         </tbody>
       </table>
     </div>
-  </div> -->
+  </div>
 </div>
 <div *ngIf='errorMessage'
      class='alert alert-danger'>

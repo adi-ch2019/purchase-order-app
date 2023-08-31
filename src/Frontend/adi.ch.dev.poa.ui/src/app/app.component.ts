@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { IOrder } from 'src/Interfaces/Order';
 import { DataService } from 'src/services/DataService';
 import { Subscription } from "rxjs";
-
 @Component({
   selector: 'mov-root',
   templateUrl: './app.component.html',
@@ -13,9 +12,8 @@ export class AppComponent implements OnInit {
   constructor(private dataService: DataService) {}
   sub!: Subscription;
   orders: IOrder[] = [];
-  public order: any;
   errorMessage = '';
-
+  
   ngOnInit(): void {
     this.sub = this.dataService.getData().subscribe({
       next: (orders: IOrder[]) => {
