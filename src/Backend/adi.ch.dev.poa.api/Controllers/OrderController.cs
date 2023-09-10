@@ -18,7 +18,7 @@ public class OrderController : ControllerBase
     }
 
     [HttpGet(Name = "OrdersGet")]
-    public IActionResult Get()
+    public IList<OrderModel> Get()
     {
        IList<OrderModel> Orders =new List<OrderModel>();
         for (int i=0;i<5;i++)
@@ -31,7 +31,7 @@ public class OrderController : ControllerBase
             Orders.Add(om);
         }
 
-        return Ok(Orders);
+        return Orders;
 
     }
 }

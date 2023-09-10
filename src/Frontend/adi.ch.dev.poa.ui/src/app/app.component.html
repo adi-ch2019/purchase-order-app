@@ -3,6 +3,7 @@
     {{pageTitle}}
   </div>
   <div class='card-body'>
+    
     <div class='table-responsive'>
       <table class='table'>
         <thead>
@@ -16,11 +17,11 @@
         <tbody>
           <tr *ngFor="let order of orders">
             <td>             
-                {{ order.OrderDate }}
+                {{ order.orderDate }}
             </td>
-            <td>{{ order.Quantity }}</td>
-            <td>{{ order.Price }}</td>
-            <td>{{ order.Details }}</td>
+            <td>{{ order.quantity }}</td>
+            <td>{{ order.price }}</td>
+            <td>{{ order.details }}</td>
             
           </tr>
         </tbody>

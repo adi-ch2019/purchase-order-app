@@ -15,8 +15,8 @@ export class AppComponent implements OnInit {
   errorMessage = '';
   
   ngOnInit(): void {
-    this.sub = this.dataService.getData().subscribe({
-      next: (orders: IOrder[]) => {
+    this.dataService.getData().subscribe({
+      next: orders => {
         this.orders = orders;
         console.log('Orders:',this.orders);
       },
