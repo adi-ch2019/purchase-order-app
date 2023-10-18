@@ -1,4 +1,6 @@
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder (args) ;
+builder.Configuration.AddJsonFile("appsettings.Development.json");
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -24,6 +26,10 @@ if (app.Environment.IsDevelopment())
 }
 app.UseCors();
 app.UseHttpsRedirection();
+
+// Retrieve the connection string
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
 
 app.UseAuthorization();
 
