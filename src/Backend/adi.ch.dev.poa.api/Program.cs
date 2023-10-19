@@ -1,5 +1,26 @@
+using adi.ch.dev.poa.api;
+using adi.ch.dev.poa.api.Data;
+using adi.ch.dev.poa.api.Data.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
+
 var builder = WebApplication.CreateBuilder (args) ;
+
+// Retrieve the connection string
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+
 builder.Configuration.AddJsonFile("appsettings.Development.json");
+// Database
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+    options.UseSqlServer(connectionString);
+});
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultTokenProviders();
 
 // Add services to the container.
 
@@ -27,8 +48,6 @@ if (app.Environment.IsDevelopment())
 app.UseCors();
 app.UseHttpsRedirection();
 
-// Retrieve the connection string
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 
 app.UseAuthorization();
