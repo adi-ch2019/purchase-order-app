@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace adi.ch.dev.poa.api.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("[controller]/[action]")]
 
 public class OrderController : ControllerBase
 {
@@ -32,6 +32,24 @@ public class OrderController : ControllerBase
         }
 
         return Orders;
+
+    }
+
+    [HttpGet(Name = "OrdersGetWithId")]
+    public IList<OrderModel> GetWithId(int id)
+    {
+       IList<OrderModel> Orders =new List<OrderModel>();
+        for (int i=0;i<5;i++)
+        {
+            OrderModel om =new OrderModel();
+            om.OrderDate = Convert.ToDateTime("31/08/2023").AddDays(i).Date;
+            om.Quantity=i;
+            om.Details="Details -"+i;
+            om.Price=i*1.01;
+            Orders.Add(om);
+        }
+
+        return Orders.Where(item => item.Quantity == id).ToList();;
 
     }
 }

@@ -3,7 +3,7 @@ import { IOrder } from 'src/Interfaces/Order';
 import { DataService } from 'src/services/DataService';
 import { Subscription } from "rxjs";
 @Component({
-  selector: 'mov-root',
+  selector: 'poa-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
