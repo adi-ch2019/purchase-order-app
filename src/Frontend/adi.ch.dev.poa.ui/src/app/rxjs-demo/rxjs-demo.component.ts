@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {of,from} from 'rxjs';
 
 @Component({
-  selector: 'mov-rxjs-demo',
+  selector: 'poa-rxjs-demo',
   templateUrl: './rxjs-demo.component.html',
   styleUrls: ['./rxjs-demo.component.scss']
 })

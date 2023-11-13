@@ -34,7 +34,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "mov",
+      "prefix": "poa",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
